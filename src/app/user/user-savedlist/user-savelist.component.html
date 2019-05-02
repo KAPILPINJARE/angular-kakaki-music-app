@@ -1,0 +1,17 @@
+<div class="container">
+        <div class="browse">
+            <div class="tittle-head two">
+                <h3 class="tittle">Saved List <span class="new">New</span></h3>
+                <div class="clearfix"> </div>
+            </div>
+    
+            <div class="container" >
+                <div class="col-md-10 browse-grid" *ngFor="let save of saved">
+                    <a href="single.html"><img src="{{ save.image }}" class="img-responsive" width="100px" height="100px"></a>
+                    <a href="single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
+                    <a class="sing" href="single.html">{{ save.album }}</a>
+                </div>
+                
+            </div>
+        </div>
+    </div>

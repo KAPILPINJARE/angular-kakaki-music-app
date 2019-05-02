@@ -1,0 +1,17 @@
+<div class="container">
+        <div class="browse">
+            <div class="tittle-head two">
+                <h3 class="tittle">All Albums <span class="new">New</span></h3>
+                <div class="clearfix"> </div>
+            </div>
+    
+            <div class="container" >
+                <div class="col-md-10 browse-grid" *ngFor="let albums of albums">
+                    <a href="single.html"><img src="{{ albums.image }}" class="img-responsive" width="100px" height="100px"></a>
+                    <a href="single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
+                    <a class="sing" href="single.html">{{ albums.album }}</a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
