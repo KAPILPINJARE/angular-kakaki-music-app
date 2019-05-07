@@ -5,16 +5,24 @@ import { AllAlbumsComponent } from './all-albums/all-albums.component';
 import { ArtistComponent } from './artist/artist.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MusicService } from './music.service';
+import { SongDetailsComponent } from './song-details/song-details.component';
+import { AlbumDetailsComponent } from './album-details/album-details.component';
+import { RouterModule } from '@angular/router';
+import { musicroutes } from './music.routes';
 
 @NgModule({
     declarations: [
         AllSongsComponent,
         AllAlbumsComponent,
-        ArtistComponent
+        ArtistComponent,
+        SongDetailsComponent,
+        AlbumDetailsComponent
       ],
       imports: [
         BrowserModule,
-        HttpClientModule
+        HttpClientModule,
+
+        RouterModule.forChild(musicroutes)
       ],
       providers: [
         MusicService
@@ -22,7 +30,9 @@ import { MusicService } from './music.service';
       exports:[
         AllSongsComponent,
         AllAlbumsComponent,
-        ArtistComponent
+        ArtistComponent,
+        SongDetailsComponent,
+        AlbumDetailsComponent
       ],
       bootstrap: []
 })

@@ -19,9 +19,9 @@ export class AllAlbumsComponent implements OnInit{
         this.route.paramMap.subscribe((map) => {
             let album = map.get("album");
             console.log(album);
-
+            
             this.musicService.allAlbums(album).subscribe((data) =>{
-                this.albums = data;
+                this.albums = data; 
                 console.log(data);
             });
         })

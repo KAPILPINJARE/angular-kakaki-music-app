@@ -9,9 +9,10 @@ export class Music{
 
 export class Album{
     albumId: number;
-    albumName: string;
     albumImage: string;
-    song:Music[];
+    album:string;
+    songs:Music[];
+    artist:string;
 }
 
 export class Artist{
