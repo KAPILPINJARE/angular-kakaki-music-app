@@ -1,9 +1,30 @@
+/* .container{
+    position: absolute;
+    z-index: 1;
+    top: 25%;
+    left: 150px;
+    height: 100%;
+    align-content: center;
+} */
+
+.container{
+    position: absolute;
+    z-index: 1;
+    top: 0px;
+    left: 150px;
+  height: 100%;
+  align-content: center;
+  
+  }
+
 body{
-    color: #fff;
-    background: #63738a;
+    
+    height: 100%;
+    
     font-family: 'Roboto', sans-serif;
 }
 .form-control{
+    
     height: 40px;
     box-shadow: none;
     color: #969fa4;
@@ -85,4 +106,3 @@ body{
 .signup-form form a:hover{
     text-decoration: underline;
 }
-

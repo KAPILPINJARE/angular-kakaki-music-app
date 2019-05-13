@@ -11,20 +11,14 @@ import { MusicService } from '../music.service';
 export class AllAlbumsComponent implements OnInit{
 
     albums: Album[];
-
     constructor(private musicService:MusicService,
                 private route:ActivatedRoute) {}
 
     ngOnInit(){
-        this.route.paramMap.subscribe((map) => {
-            let album = map.get("album");
-            console.log(album);
-            
-            this.musicService.allAlbums(album).subscribe((data) =>{
+            this.musicService.allAlbums().subscribe((data) =>{
                 this.albums = data; 
-                console.log(data);
             });
-        })
+     
     }
 
 }

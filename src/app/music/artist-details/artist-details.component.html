@@ -1,0 +1,61 @@
+<a routerLink="/allartists" class="btn btn-secondary btn-sm">back</a>
+<a routerLink="/main" class="btn btn-secondary btn-sm">home</a>
+
+
+<div style="background-color: lightcyan">
+    <div class="container">
+        <h4 style="color:rgb(46, 15, 15);text-align:center; font-size: -webkit-xxx-large">
+            Chanson
+        </h4>
+    </div>
+
+    <br>
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6 text-center">
+                        <div class="text-center">
+                            <img src="{{ artist.artistImage }}" class="img-responsive" width="350px" height="110%">
+                            <br><br>
+
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <table class="table table-bordered">
+                            <tbody>
+                                <tr>
+                                    <td>Artist Name</td>
+                                    <td>{{artist.artistName}}</td>
+
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <div class="container">
+                <div class="container-audio" style="width:80%; float:left; margin-left:10%">
+                    <audio controls loop autoplay src="{{ song.songUrl }}">
+                        Your browser dose not Support the audio Tag
+                    </audio>
+                </div>
+            </div>
+            <br>
+            <div class="container" style="color:black">
+                <div class="list-group text-center" style="margin-left:57px">
+
+                    <div *ngFor="let song of artist.songs">
+                        <a (click)="play(song)" class="list-group-item list-group-item-action list-group-item-dark">{{ song.songTitle }}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

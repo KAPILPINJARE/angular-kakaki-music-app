@@ -23,7 +23,7 @@
                         <li><a href="404.html">Services</a> </li>
                     </ul>
                 </li>
-                <li><a href="radio.html"><i class="lnr lnr-users"></i> <span>Artists</span></a></li>
+                <li><a routerLink="/allartists"><i class="lnr lnr-users"></i> <span>Artists</span></a></li>
 
                 <li class="menu-list"><a routerLink="/favourites"><i class="lnr lnr-heart"></i> <span>My Favourities</span></a>
                     <ul class="sub-menu-list">
@@ -50,10 +50,13 @@
         </div>
 
         <div class="container" >
-            <div class="col-md-10 browse-grid" *ngFor="let song of songs">
-                <a routerLink="/songdetails"><img src="{{ song.image }}" class="img-responsive" width="100px" height="100px"></a>
-                <a routerLink="/songdetails"><i class="glyphicon glyphicon-play-circle"></i></a>
-                <a class="sing" routerLink="/songdetails">{{ song.songName }}</a>
+            <div class="row">
+                <div class="col-md-2 browse-grid sngs" *ngFor="let song of songs" >
+                    <a routerLink="/songdetails/{{ song.songId }}" style="display: inline-block"><img src="{{ song.songImage }}" class="img-responsive" width="100px" height="100px"></a>
+                    <a routerLink="/songdetails/{{ song.songId }}"><i class="glyphicon glyphicon-play-circle"></i></a>
+                    <a class="sing" routerLink="/songdetails/{{ song.songId }}">{{ song.songTitle }}</a>
+                </div>
+
             </div>
             
         </div>

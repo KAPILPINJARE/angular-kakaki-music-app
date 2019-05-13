@@ -7,10 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'music-app';
+  
+  
+  // this is for next page top redirect
   onActivate(event) {
-    window.scroll(0,0);
-    //or document.body.scrollTop = 0;
-    //or document.querySelector('body').scrollTo(0,0)
-   
-}
+    window.scroll(0, 0);
+  }
+
+
+  
 }

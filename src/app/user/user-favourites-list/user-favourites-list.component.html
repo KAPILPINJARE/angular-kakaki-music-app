@@ -1,42 +1,64 @@
 <!-- ------------------------------left side bar start-- --------------------------->
-<div class="left-side sticky-left-side" tabindex="5000" style="overflow:hidden; outline: none">
-        <!--logo and iconic logo start-->
-        <div class="logo">
-            <h1><a href="#">Kakak!<span>c</span></a></h1>
+<div id="mySidenav" class="sidenav" style="margin-top: 10px">
+        <a href="javascript:void(0)" class="closebtn" (click)="cNav()">&times;</a>
+     
+        <a routerLink="/home">Home</a>
+        <a routerLink="/allsongs">All Songs</a>
+        <a routerLink="/allalbums">Albums</a>
+        <a href="#">Artists</a>
+        <a routerLink="/favourites">My Favourities</a>
+        <a href="#" data-toggle="modal" data-target="#myModal">Feedback</a>
+     
+      </div>
+     
+      <div  style="background-color: black; height: 50px;">
+          <span style="font-size:25px;cursor:pointer;padding-top: 10px; color: aliceblue; float: left;" (click)="oNav()">&#9776; Menu
+         </span> 
+     
+         
+         <h5 style="color: aliceblue; font-size: 40px; margin-left: 350px;padding-top: 5px">KAKAKI MUSIC APP
+            <button type="button" class="btn btn-default btn-sm" style="float: right; padding: 10px">
+                <span routerLink="" class="glyphicon glyphicon-log-out"> Logout</span>
+              </button>
+        </h5>
+       
         </div>
-        <div class="logo-icon text-center">
-            <a href="#">K </a>
-        </div>
-        <!-- /w3l-agile -->
-        <!--logo and iconic logo end-->
-        <div class="left-side-inner">
-            <!--sidebar nav start-->
-            <ul class="nav nav-pills nav-stacked custom-nav">
-                <li class="active"><a routerLink="/home"><i class="lnr lnr-home"></i><span>Home</span></a></li>
-    
-                <li><a routerLink="/allsongs"><i class="lnr lnr-music-note"></i> <span>All Sonsgs</span></a></li>
-    
-                <li class="menu-list"><a routerLink="/allalbums"><i class="lnr lnr-indent-increase"></i> <span>All
-                            Albums</span></a>
-                    <ul class="sub-menu-list">
-                        <li><a href="browse.html">Artists</a> </li>
-                        <li><a href="404.html">Services</a> </li>
-                    </ul>
-                </li>
-                <li><a href="radio.html"><i class="lnr lnr-users"></i> <span>Artists</span></a></li>
+     
+        <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog">
+               
+                  <!-- Modal content-->
+                  <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" style="text-align: center">Feedback</h4>
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                            <form>
+                              <div class="form-group">
+                                <label for="recipient-name" class="col-form-label">Name:</label>
+                                <input type="text" class="form-control" id="recipient-name">
+                              </div>
+                              <div class="form-group">
+                                    <label for="email" class="col-form-label">Email:</label>
+                                    <input type="text" class="form-control" id="email">
+                                  </div>
+                              <div class="form-group">
+                                <label for="message-text" class="col-form-label">Message:</label>
+                                <textarea class="form-control" id="message-text"></textarea>
+                              </div>
+                            </form>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Send</button>
+                          </div>
+                   
+                  </div>
+                 
+                </div>
+              </div>
 
-                <li class="menu-list"><a routerLink="/favourites"><i class="lnr lnr-heart"></i> <span>My Favourities</span></a>
-                    <ul class="sub-menu-list">
-                        <li><a href="radio.html">All Songs</a></li>
-                    </ul>
-                </li>
-                <li><a href="typography.html"><i class="lnr lnr-pencil"></i> <span>Feedback</span></a></li>
-            </ul>
-           
-            <!--sidebar nav end-->
-        </div>
-    </div>
-    
     <!-- side bar enddd ----------------------------------------------------------------------------------------------------------   -->
     
     
