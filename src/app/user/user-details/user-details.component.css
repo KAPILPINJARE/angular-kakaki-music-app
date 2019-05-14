@@ -1,5 +1,6 @@
-
-  .sidenav {
+/* nav bar css start */
+    
+.sidenav {
     height: 100%;
     width: 0;
     position: fixed;
@@ -37,3 +38,5 @@
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
   }
+
+/* nav bar css end */

@@ -25,7 +25,8 @@ import { WelcomeComponent } from './welcome.component';
 
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

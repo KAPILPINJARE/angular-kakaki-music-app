@@ -16,8 +16,8 @@ export class UserService{
         return this.http.post<User>(this.baseUrl + "user", user);
     }
 
-    getUserByEmail(email: string):Observable<User> {
-        return this.http.get<User>(this.baseUrl+ "user/bymail/" + email);
+    getUserByEmail(email:string):Observable<User> {
+       return this.http.get<User>(this.baseUrl+ "user/bymail/" + email);
     }
 
 }

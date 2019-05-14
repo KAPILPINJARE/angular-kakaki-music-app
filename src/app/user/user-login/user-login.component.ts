@@ -5,43 +5,46 @@ import { User } from '../user';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
-    selector:"login",
-    templateUrl:"./user-login.component.html",
-    styleUrls:["./user-login.component.css"]
+    selector: "login",
+    templateUrl: "./user-login.component.html",
+    styleUrls: ["./user-login.component.css"]
 })
-export class UserLoginComponent implements OnInit{
+export class UserLoginComponent implements OnInit {
 
-    email:string;
-    password:string;
-    user:User;
+    email: string;
+    password: string;
+    user: User;
     constructor(
         private route: Router,
-              private  userService:UserService) {}
-   
+        private userService: UserService) { }
+
+    ngOnInit() {
+
+    }
+    onSubmit() {
 
 
-    ngOnInit(){}
-
-
-     onSubmit() {
-         alert(this.email);
-         alert(this.password);
         this.userService.getUserByEmail(this.email).subscribe((data) => {
-            alert(this.user);
             this.user = data;
-            alert("sueremail2");
+
+            if (this.user != null) {
+                if (this.user.userPassword == this.password) {
+
+                    //setting session storage
+                    sessionStorage.setItem("user", JSON.stringify(this.user));
+                    //console.log(JSON.parse(sessionStorage.getItem("user")));
+
+                    this.route.navigate(['/main']);
+                }
+            } else {
+                this.route.navigate(['/signin']);
+            }
+
         });
 
-        if(this.user!=null){
-            alert("suerpass");
-           if(this.user.userPassword == this.password){
-            this.route.navigate(['/main']);
-           }
-        }else{
-            this.route.navigate(['']);
-        }
 
-      
+
+
     }
-    
+
 }
