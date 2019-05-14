@@ -3,6 +3,7 @@ import { MusicService } from '../music.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Album, Song } from '../music';
 import { User } from 'src/app/user/user';
+import { UserService } from 'src/app/user/user.service';
 
 @Component({
     templateUrl: "./album-details.component.html",
@@ -13,15 +14,16 @@ export class AlbumDetailsComponent implements OnInit {
 
     constructor(private musicService: MusicService,
         private route: ActivatedRoute,
-        private router: Router) { }
+        private router: Router,
+        private userService: UserService) { }
 
     album: Album;
     song: Song;
 
-
+        
     user: User;
+    
     ngOnInit(): void {
-
         this.user = JSON.parse(sessionStorage.getItem("user"));
         if (this.user != null) {
             this.route.paramMap.subscribe((map) => {
@@ -56,5 +58,13 @@ export class AlbumDetailsComponent implements OnInit {
     logout() {
         sessionStorage.removeItem("user");
         this.router.navigate(["/signin"]);
+    }
+
+
+    addToFavourite(songId:number){
+        this.user.userFavourite = [songId];
+        this.userService.addToFavourite(this.user).subscribe((data) => {
+            alert("added successfully");
+        })
     }
 }

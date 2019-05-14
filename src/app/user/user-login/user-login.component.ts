@@ -35,8 +35,9 @@ export class UserLoginComponent implements OnInit {
                     //console.log(JSON.parse(sessionStorage.getItem("user")));
 
                     this.route.navigate(['/main']);
-                }
+                }else{alert("please enter correct password")}
             } else {
+                alert("please enter correct email and password")
                 this.route.navigate(['/signin']);
             }
 

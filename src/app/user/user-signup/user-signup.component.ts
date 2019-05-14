@@ -14,10 +14,12 @@ export class UserSignupComponent {
 
     userForm: FormGroup;
     constructor(private fb: FormBuilder,
-                private userService:UserService,
-                private router:Router) { }
+        private userService: UserService,
+        private router: Router) { }
 
-    user:User;
+    user: User;
+
+    confirmPassword:string;
 
     ngOnInit() {
 
@@ -40,18 +42,24 @@ export class UserSignupComponent {
     }
 
     onSubmit() {
-        alert("Called");
 
-        console.log(this.user);
-    this.userService.newUser(this.user).subscribe((data) => {
-        console.log("success");
-        console.log(this.user);
-        if(data != null){
-            alert("Registration is succesful.");
-            this.router.navigate(["/signin"]);
+        if(this.user.userPassword != this.confirmPassword)
+        {
+            alert("confirm your password, its not same!!!!")
         }
-    });
+        else{
+            this.userService.newUser(this.user).subscribe((data) => {
+                console.log("success");
+                console.log(this.user);
+                if (data != null) {
+                    alert("Registration is succesful.");
+                    this.router.navigate(["/signin"]);
+                }
+            });
+    
 
+        }
+        
 
     }
 
@@ -71,5 +79,5 @@ export class UserSignupComponent {
 
 
 
-    
+
 }

@@ -2,8 +2,8 @@
 <div class="container signup-box">
         <div class="signup-form; col-md-4 col-md-offset-4">
 
-{{ user | json}}
-                <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+               
+                <form [formGroup]="userForm" (ngSubmit)="onSubmit()" #form="ngForm">
                         <h2 style="text-align: center; color: floralwhite">Sign Up</h2>
 
                         <div class="form-group">
@@ -14,21 +14,21 @@
                                                         [class.is-invalid]="first_name.touched && first_name.invalid"
                                                         [(ngModel)]="user.userFirstName" />
                                         </div>
-                                       
+
                                         <div class="col-xs-6">
-                                                        <input type="text" class="form-control" name="lastName"
-                                                                placeholder="Last Name" required formControlName="last_name"
-                                                                [class.is-invalid]="last_name.touched && last_name.invalid"
-                                                                [(ngModel)]="user.userLastName" />
-                                                </div>
-                                                <div [class.d-none]="first_name.untouched || first_name.valid"
+                                                <input type="text" class="form-control" name="lastName"
+                                                        placeholder="Last Name" required formControlName="last_name"
+                                                        [class.is-invalid]="last_name.touched && last_name.invalid"
+                                                        [(ngModel)]="user.userLastName" />
+                                        </div>
+                                        <div [class.d-none]="first_name.untouched || first_name.valid"
                                                 class="text-danger">
                                                 First name is required &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                         </div>
-                                                <div [class.d-none]="last_name.untouched || last_name.valid"
-                                                        class="text-danger">
-                                                        Last name is required
-                                                </div>
+                                        <div [class.d-none]="last_name.untouched || last_name.valid"
+                                                class="text-danger">
+                                                Last name is required
+                                        </div>
                                 </div>
                         </div>
                         <div class="form-group">
@@ -58,7 +58,7 @@
 
                         <div class="form-group">
                                 <input type="text" class="form-control" name="email"
-                                        placeholder="Email eg: deepti20@gmail.com" formControlName="email"
+                                        placeholder="Email eg: abc@gmail.com" formControlName="email"
                                         [class.is-invalid]="email.touched && email.invalid" required="email"
                                         [(ngModel)]="user.userEmail">
 
@@ -109,7 +109,7 @@
                                 <input type="password" class="form-control" name="confirm_password"
                                         placeholder="Confirm Password" formControlName="confirm_password"
                                         [class.is-invalid]="confirm_password.touched && confirm_password.invalid"
-                                        required="required">
+                                        required="required" [(ngModel)]="confirmPassword">
 
                                 <div [class.d-none]="confirm_password.untouched || confirm_password.valid"
                                         class="text-danger">
@@ -120,13 +120,12 @@
                                 <label class="checkbox-inline" style="color: floralwhite">
                                         <input type="checkbox" name="checkbox" formControlName="checkbox"
                                                 [class.is-invalid]="checkbox.touched && checkbox.invalid"
-                                                required="required"> I accept the <a href="#">Terms of Use</a> &amp; <a
-                                                href="#">Privacy
+                                                required> I accept the <a>Terms of Use</a> &amp; <a>Privacy
                                                 Policy</a></label>
                         </div>
                         <div class="form-group">
                                 <button type="submit" class="btn btn-success btn-lg btn-block"
-                                        [disabled]="userForm.form.invalid">Register Now</button>
+                                        [disabled]="form.form.invalid">Register Now</button>
                         </div>
                 </form>
                 <div class="text-center" style="color: floralwhite">Already have an account? <a

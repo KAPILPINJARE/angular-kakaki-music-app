@@ -4,12 +4,14 @@ import { UserLoginComponent } from './user-login/user-login.component';
 import { UserFavouritesListComponent } from './user-favourites-list/user-favourites-list.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { UserForgetPasswordComponent } from './user-forget-password/user-forget-password.component';
+import { UserFavouritesListDetailsComponent } from './user-favourites-list-details/user-favourites-list-details.component';
 
 
 export const userRoutes : Routes = [
     { path: "signup" , component:UserSignupComponent },
     { path: "signin" , component:UserLoginComponent },
     { path: "favourites" , component:UserFavouritesListComponent },
+    { path: "favourites/:songId" , component:UserFavouritesListDetailsComponent },
     { path: "userdetails", component:UserDetailsComponent},
     { path: "forget-password", component:UserForgetPasswordComponent},
 ]

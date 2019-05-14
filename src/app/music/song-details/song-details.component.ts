@@ -3,6 +3,7 @@ import { MusicService } from '../music.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Song } from '../music';
 import { User } from 'src/app/user/user';
+import { UserService } from 'src/app/user/user.service';
 
 
 
@@ -15,7 +16,8 @@ import { User } from 'src/app/user/user';
 export class SongDetailsComponent implements OnInit {
     constructor(private musicService: MusicService,
         private route: ActivatedRoute,
-        private router: Router) { }
+        private router: Router,
+        private userService: UserService) { }
 
     song: Song;
     user: User;
@@ -46,5 +48,12 @@ export class SongDetailsComponent implements OnInit {
     logout() {
         sessionStorage.removeItem("user");
         this.router.navigate(["/signin"]);
+    }
+
+
+    addToFavourite(songId:number){
+        this.userService.addToFavourite(this.user).subscribe((data) => {
+            alert("added successfully");
+        })
     }
 }

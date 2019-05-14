@@ -9,6 +9,7 @@ import { UserDetailsComponent } from './user-details/user-details.component';
 import { UserForgetPasswordComponent } from './user-forget-password/user-forget-password.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { UserService } from './user.service';
+import { UserFavouritesListDetailsComponent } from './user-favourites-list-details/user-favourites-list-details.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { UserService } from './user.service';
         UserLoginComponent,
         UserFavouritesListComponent,
         UserDetailsComponent,
-        UserForgetPasswordComponent
+        UserForgetPasswordComponent,
+        UserFavouritesListDetailsComponent
        
         
     ],
@@ -32,7 +34,8 @@ import { UserService } from './user.service';
         UserLoginComponent,
         UserFavouritesListComponent,
         UserDetailsComponent,
-        UserForgetPasswordComponent
+        UserForgetPasswordComponent,
+        UserFavouritesListDetailsComponent
     ],
     providers:[
         UserService

@@ -63,20 +63,24 @@
 <!-- side bar enddd ----------------------------------------------------------------------------------------------------------   -->
 
     
+
 <div class="container">
-        <div class="browse">
-            <div class="tittle-head two">
-                <h3 class="tittle">Favourites <span class="new">New</span></h3>
-                <div class="clearfix"> </div>
-            </div>
-    
-            <div class="container" >
-                <div class="col-md-10 browse-grid" *ngFor="let favlourite of favourites">
-                    <a href="single.html"><img src="{{ favourite.image }}" class="img-responsive" width="100px" height="100px"></a>
-                    <a href="single.html"><i class="glyphicon glyphicon-play-circle"></i></a>
-                    <a class="sing" href="single.html">{{ favourite.album }}</a>
+    <div class="browse">
+        <div class="tittle-head two">
+            <h3 class="tittle">Favourites <span class="new">New</span></h3>
+            <div class="clearfix"> </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2 browse-grid" *ngFor="let song of songs">
+                    <a routerLink="/favourites/{{song.songId}}"><img src="{{ song.songImage }}" class="img-responsive" width="100px"
+                            height="100px"></a>
+                    <a routerLink="/favourites/{{song.songId}}"><i class="glyphicon glyphicon-play-circle"></i></a>
+                    <a class="sing" routerLink="/favourites/{{song.songId}}">{{ song.songIndex }}</a>
                 </div>
-                
             </div>
+
         </div>
     </div>
+</div>

@@ -1,3 +1,6 @@
+
+
+
 export class User{
     userId:number;
     userName:string;
@@ -8,4 +11,5 @@ export class User{
     userPassword:string;
     SecurityQuestion:string;
     SecurtyAnswer:string;
+    userFavourite:number[];
 }
