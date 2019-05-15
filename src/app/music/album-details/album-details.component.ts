@@ -62,8 +62,7 @@ export class AlbumDetailsComponent implements OnInit {
 
 
     addToFavourite(songId:number){
-        this.user.userFavourite = [songId];
-        this.userService.addToFavourite(this.user).subscribe((data) => {
+        this.userService.addToFavourite(this.user.userEmail,songId).subscribe((data) => {
             alert("added successfully");
         })
     }

@@ -18,6 +18,9 @@
 
 
   <h5 style="color: aliceblue; font-size: 40px; margin-left: 350px;padding-top: 5px">KAKAKI MUSIC APP
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         {{user.userFirstName}}   
       <button type="button" class="btn btn-default btn-sm" style="float: right; padding: 10px">
           <span (click)="logout()" class="glyphicon glyphicon-log-out"> Logout</span>
       </button>
@@ -77,7 +80,7 @@
                     <a routerLink="/favourites/{{song.songId}}"><img src="{{ song.songImage }}" class="img-responsive" width="100px"
                             height="100px"></a>
                     <a routerLink="/favourites/{{song.songId}}"><i class="glyphicon glyphicon-play-circle"></i></a>
-                    <a class="sing" routerLink="/favourites/{{song.songId}}">{{ song.songIndex }}</a>
+                    <a class="sing" routerLink="/favourites/{{song.songId}}">{{ song.songTitle }}</a>
                 </div>
             </div>
 

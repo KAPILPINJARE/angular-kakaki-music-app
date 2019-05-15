@@ -12,18 +12,22 @@ import { MusicService } from 'src/app/music/music.service';
 })
 export class UserFavouritesListComponent implements OnInit {
   user: User;
-  songs:Song[];
-  constructor(private router:Router,
-            private userService:UserService,
-            private musicService:MusicService){}
+  songs: Song[];
+  constructor(private router: Router,
+    private userService: UserService,
+    private musicService: MusicService) { }
 
   ngOnInit() {
     this.user = JSON.parse(sessionStorage.getItem("user"));
 
-    this.userService.getAllFavouriteSongs(this.user.userEmail).subscribe((data)=>{
-     this.songs = data;
-    })
-
+    if (this.user != null) {
+      this.userService.getAllFavouriteSongs(this.user.userEmail).subscribe((data) => {
+        this.songs = data;
+      })
+    } else {
+      this.router.navigate(["/signin"]);
+      alert("please login to access");
+    }
   }
 
   oNav() {
@@ -34,9 +38,9 @@ export class UserFavouritesListComponent implements OnInit {
     document.getElementById("mySidenav").style.width = "0";
   }
 
-  logout(){
+  logout() {
     sessionStorage.removeItem("user");
     this.router.navigate(["/signin"]);
-}
+  }
 
 }

@@ -7,6 +7,7 @@ import { UserModule } from './user/user.module';
 import { MainPageModule } from './main-page/main-page.module';
 import { appRoutes } from './app.routes';
 import { WelcomeComponent } from './welcome.component';
+import { AppService } from './app.service';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { WelcomeComponent } from './welcome.component';
     RouterModule.forRoot(appRoutes)
   ],
   providers: [
+    AppService
   ],
   bootstrap: [AppComponent]
 })

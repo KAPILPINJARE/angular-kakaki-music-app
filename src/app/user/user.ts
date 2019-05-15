@@ -1,3 +1,4 @@
+import { Song } from '../music/music';
 
 
 
@@ -12,4 +13,9 @@ export class User{
     SecurityQuestion:string;
     SecurtyAnswer:string;
     userFavourite:number[];
+}
+
+export class UserFavourite{
+    userEmail:string;
+    favouriteSong:number[];
 }

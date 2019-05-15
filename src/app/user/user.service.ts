@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { User } from './user';
+import { User, UserFavourite } from './user';
 import { Observable } from 'rxjs';
 import { Song } from '../music/music';
 
@@ -10,6 +10,7 @@ export class UserService{
     
 
     baseUrl = "http://localhost:8081/";
+    baseUrlForFavouriteSong = "http://localhost:8085/";
 
     constructor(private http: HttpClient){}
 
@@ -21,15 +22,15 @@ export class UserService{
        return this.http.get<User>(this.baseUrl+ "user/bymail/" + email);
     }
 
-    addToFavourite(user:User):Observable<User>{
-        return this.http.put<User>(this.baseUrl + "user" , user);
+    addToFavourite(userEmail:string,songId:number):Observable<UserFavourite>{
+        return this.http.post<UserFavourite>(this.baseUrlForFavouriteSong + "favourite/" +  userEmail + "/"+ songId , UserFavourite);
     }
 
     getAllFavouriteSongs(email:string):Observable<Song[]>{
-        return this.http.get<Song[]>(this.baseUrl +"user/favourite/" + email);
+        return this.http.get<Song[]>(this.baseUrlForFavouriteSong +"favourite/" + email);
     }
 
-    deleteFavourite(user:User,songId:number):Observable<User>{
-        return this.http.put<User>(this.baseUrl + "user/update/"+ songId,user);
+    deleteFavourite(userEmail:string,songId:number):Observable<UserFavourite>{
+         return this.http.put<UserFavourite>(this.baseUrlForFavouriteSong + "favourite/"+ userEmail +"/"+ songId,UserFavourite);
     }
 }

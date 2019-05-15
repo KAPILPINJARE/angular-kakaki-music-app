@@ -3,8 +3,7 @@ import { MusicService } from 'src/app/music/music.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from '../user.service';
 import { Song } from 'src/app/music/music';
-import { User } from '../user';
-import { userInfo } from 'os';
+import { User, UserFavourite } from '../user';
 
 
 
@@ -21,6 +20,7 @@ export class UserFavouritesListDetailsComponent implements OnInit {
 
     song: Song;
     user: User;
+    favouriteSongList: UserFavourite;
     ngOnInit(): void {
         this.user = JSON.parse(sessionStorage.getItem("user"));
         if (this.user != null) {
@@ -52,8 +52,10 @@ export class UserFavouritesListDetailsComponent implements OnInit {
 
 
     deleteFavourite(songId:number){
-        this.userService.deleteFavourite(this.user,songId).subscribe((data) => {
+
+        this.userService.deleteFavourite(this.user.userEmail,songId).subscribe((data) => {
             alert("deleted successfully");
+            this.favouriteSongList = data;
             this.router.navigate(["/favourites"]);
         })
     }
