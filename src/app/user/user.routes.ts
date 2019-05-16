@@ -5,6 +5,7 @@ import { UserFavouritesListComponent } from './user-favourites-list/user-favouri
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { UserForgetPasswordComponent } from './user-forget-password/user-forget-password.component';
 import { UserFavouritesListDetailsComponent } from './user-favourites-list-details/user-favourites-list-details.component';
+import { UserEditProfileComponent } from './user-edit-profile/user-edit-profile.component';
 
 
 export const userRoutes : Routes = [
@@ -14,4 +15,5 @@ export const userRoutes : Routes = [
     { path: "favourites/:songId" , component:UserFavouritesListDetailsComponent },
     { path: "userdetails", component:UserDetailsComponent},
     { path: "forget-password", component:UserForgetPasswordComponent},
+    { path: "edit-profile", component:UserEditProfileComponent},
 ]

@@ -12,10 +12,15 @@ export class User{
     userPassword:string;
     SecurityQuestion:string;
     SecurtyAnswer:string;
-    userFavourite:number[];
+    role:string;
 }
 
 export class UserFavourite{
     userEmail:string;
     favouriteSong:number[];
+}
+
+export class Authenticate{
+    userEmail:string;
+    userPassword:string;
 }

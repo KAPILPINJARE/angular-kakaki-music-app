@@ -46,19 +46,23 @@
 
 
 					<form (ngSubmit)="onSubmit()" class="form-signin" #userLoginForm="ngForm">
-							<div class="input-group form-group">
+							
+					
+						
+						
+						<div class="input-group form-group">
 								<div class="input-group-prepend">
 									<span class="input-group-text"><i class="fas fa-user icons-btn"></i></span>
 									<a href="https://enterprise.github.com/login"></a>
 								</div>
-								<input type="text" class="form-control" placeholder="email" name="userEmail" [(ngModel)]="email" />
+								<input type="text" class="form-control" placeholder="email" name="userEmail" [(ngModel)]="auth.userEmail" />
 		
 							</div>
 							<div class="input-group form-group">
 								<div class="input-group-prepend">
 									<span class="input-group-text"><i class="fas fa-key icons-btn"></i></span>
 								</div>
-								<input type="password" class="form-control" placeholder="password" name="userPassword" [(ngModel)]="password" required>
+								<input type="password" class="form-control" placeholder="password" name="userPassword" [(ngModel)]="auth.userPassword" required>
 		
 							</div>
 							<div class="row align-items-center remember">
@@ -69,8 +73,6 @@
 		
 							</div>
 						</form>
-
-
 
 			</div>
 			<div class="card-footer">

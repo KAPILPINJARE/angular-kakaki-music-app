@@ -1,0 +1,49 @@
+<div class="container">
+
+    <h4 style="background-color: black; color:white ; text-align: center;font-size: 40px">All Users</h4>
+    <table class="table table-bordered">
+
+        <thead>
+
+            <tr>
+
+                <th style="text-align: center">User Id</th>
+
+                <th style="text-align: center">User Name</th>
+
+                <th style="text-align: center"></th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            <tr *ngFor= "let AdminUser of adminUser">
+
+                <td>
+                    <a routerLink="/admin-user"></a>
+                </td>
+
+                <td>{{AdminUser.userFirstName}}</td>
+
+                <td>{{AdminUser.userName}}</td>
+                <td>
+                
+               
+                     <button type="button" class="btn btn-block" style="background-color: #ff9f00; width: 40%; display: block; margin: 0 auto">View Details</button>
+                    <br>
+
+                    <button type="button" class="btn btn-block" style="background-color: #fb641b; width: 40%; display: block; margin: 0 auto">Home</button>
+                </td>
+
+            </tr>
+
+        </tbody>
+
+    </table>
+
+</div>
+
+
+
