@@ -7,7 +7,7 @@ import { Song } from '../music/music';
 @Injectable()
 
 export class AdminService{
-    baseUrl = "http://10.246.93.39:8081/admin";
+    baseUrl = "http://localhost:8081/";
 
     constructor(private http: HttpClient){}
 
@@ -16,7 +16,7 @@ export class AdminService{
     //     return this.http.get<Book[]>(this.baseUrl + "books/" + _id);
     // }
     findAllUser():Observable<User[]>{
-        return this.http.get<User[]>(this.baseUrl );
+        return this.http.get<User[]>(this.baseUrl + "user" );
     }
 
     CreateAlbum():Observable<Song[]>{

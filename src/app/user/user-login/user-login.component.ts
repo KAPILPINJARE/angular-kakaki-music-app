@@ -11,14 +11,15 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 })
 export class UserLoginComponent implements OnInit {
 
-    email: string;
-    password: string;
+   
     user: User;
     auth: Authenticate;
 
     constructor(
         private route: Router,
-        private userService: UserService) { }
+        private userService: UserService) {
+            this.auth=new Authenticate();
+         }
 
     ngOnInit() {
 

@@ -9,6 +9,7 @@ import { AdminService } from './admin.service';
 import { AdminAlbumComponent } from './admin-create-album/admin-create-album.component';
 import { CreateArtistComponent } from './create-artist/create-artist.component';
 import { AdminUploadSongComponent } from './admin-upload-song/admin-upload-song.component';
+import { AdminUserDetailsComponent } from './admin-user-details/admin-user-details.component';
 
 @NgModule({
     declarations: [
@@ -16,7 +17,8 @@ import { AdminUploadSongComponent } from './admin-upload-song/admin-upload-song.
         AdminUserComponent,
         AdminAlbumComponent,
         CreateArtistComponent,
-        AdminUploadSongComponent
+        AdminUploadSongComponent,
+        AdminUserDetailsComponent,
     ],
 
     imports: [
@@ -34,7 +36,8 @@ import { AdminUploadSongComponent } from './admin-upload-song/admin-upload-song.
         RouterModule,
         AdminAlbumComponent,
         CreateArtistComponent,
-        AdminUploadSongComponent
+        AdminUploadSongComponent,
+        AdminUserDetailsComponent
     ]
 })
 export class AdminModule{
