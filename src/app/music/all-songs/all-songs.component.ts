@@ -14,7 +14,8 @@ export class AllSongsComponent implements OnInit {
 
 
     songs: Song[];
-
+   
+    
     constructor(private musicService: MusicService,
         private route: ActivatedRoute,
         private router: Router) { }
@@ -23,6 +24,7 @@ export class AllSongsComponent implements OnInit {
     ngOnInit() {
         this.user = JSON.parse(sessionStorage.getItem("user"));
 
+       
         //null user redirect to home page 
             if(this.user==null){
             alert("please log in to access");

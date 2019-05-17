@@ -10,6 +10,7 @@ import { RouterModule } from '@angular/router';
 import { musicroutes } from './music.routes';
 import { AllArtistComponent } from './all-artists/all-artists.component';
 import { ArtistDetailsComponent } from './artist-details/artist-details.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
     declarations: [
@@ -23,6 +24,7 @@ import { ArtistDetailsComponent } from './artist-details/artist-details.componen
       imports: [
         BrowserModule,
         HttpClientModule,
+        FormsModule,
 
         RouterModule.forChild(musicroutes)
       ],

@@ -21,8 +21,7 @@ export class SongDetailsComponent implements OnInit {
 
     song: Song;
     user: User;
-   
-
+ 
         
     ngOnInit(): void {
         this.user = JSON.parse(sessionStorage.getItem("user"));
@@ -42,6 +41,7 @@ export class SongDetailsComponent implements OnInit {
             this.route.paramMap.subscribe((map) => {
                 let songId = Number(map.get("songId"));
 
+            
                 this.musicService.songDetails(songId).subscribe((data) => {
                     this.song = data;
                 });

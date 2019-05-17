@@ -44,7 +44,7 @@
                 <div class="col-md-2 browse-grid sngs" *ngFor="let song of songs" >
                     <a routerLink="/songdetails/{{ song.songId }}" style="display: inline-block"><img src="{{ song.songImage }}" class="img-responsive" style="width: 143px;height: 198px"></a>
                     <a routerLink="/songdetails/{{ song.songId }}"><i class="glyphicon glyphicon-play-circle"></i></a>
-                    <a class="sing" routerLink="/songdetails/{{ song.songId }}">{{ song.songTitle }}</a>
+                    <a class="sing" routerLink="/songdetails/{{song.songId}}">{{ song.songTitle }}</a>
                 </div>
 
             </div>
@@ -52,3 +52,5 @@
         </div>
     </div>
 </div>
+
+ 
