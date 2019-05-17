@@ -47,7 +47,7 @@ export class SongDetailsComponent implements OnInit {
                 });
             });
         } else {
-            this.router.navigate(["/signin"]);
+            this.router.navigate(["/userhome"]);
             alert("please login to access");
         }
     }
